@@ -165,9 +165,7 @@ body {
  }
   /* Menu Section */
 
-  @media(max-width:780px){
-   
-  }
+ 
   #menu img{
     margin-top: 60px;
    width: 400px;
@@ -271,6 +269,18 @@ body {
 
 .toggle-btn:hover {
     background-color: #724b41;
+}
+
+@media(max-width:780px){
+    .order{
+
+    }
+    .order p {
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 0.9rem;
+        line-height: 1;
+      }
 }
   /* Contact Section with Form */
   #contact {
