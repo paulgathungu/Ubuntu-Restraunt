@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Restaurant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>UBUNTU</h1>
+      <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul id="navbar">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <!-- Hero Section with Moving Background Images -->
+    <section id="home" class="hero">
+      <h2>Welcome to Ubuntu Restaurant</h2>
+      <p>Experience the best dining in town</p>
+    </section>
+    
+ 
+    
+   <div class="fade-in">
+     <!-- About Section with an Image and Content -->
+     <section id="about">
+        <div class="about-content">
+          <h2>About Us</h2>
+          <p>At Ubuntu Restaurant, we believe in delivering an extraordinary dining experience. Our journey began with a passion for fine cuisine and a desire to create a space where every meal feels like a celebration. With a blend of modern aesthetics and traditional flavors, our restaurant promises a warm and inviting ambiance, exceptional service, and an innovative menu that delights the senses.</p>
+        </div>
+        <img src="assets/pexels-pixabay-162993.jpg" alt="Our Chef">
+      </section>
+   </div>
+       <!-- Menu Section -->
+    <div class="fade-in">
+        <section id="menu">
+            <h2>Our Culinary Offerings</h2>
+            <p>Explore our delicious dishes, crafted with passion and the freshest ingredients.</p>
+            <img src="assets/menu4.jpg" alt="Our Chef" > 
+            
+        </section>
+    </div>
+
+
+    <div class="fade-in">
+        <div class="order">
+            <div class="how-order">
+                <h2>How to Order</h2>
+        <h3>Ubuntu Tables' Restaurant – Special Menu (18/03/2025)</h3>
+        
+        Join us for an unforgettable dining experience at Ubuntu Tables' Restaurant! For just KSH 200, enjoy a carefully curated three-course meal featuring a fusion of rich flavors and cultural delicacies.
+        
+        
+        <h3>Step 1: Choose Your Starter</h3>
+        <p>Butternut & Sweet Potato Soup with Bread Rolls – A warm, creamy soup served with freshly baked bread.
+            <br>OR <br> Melon Cocktail – A refreshing, fruit-infused starter to awaken your taste buds.</p>
+        <h3>Step 2: Select Your Main Course</h3>
+        <p>Sweet & Sour Pork with Peppers, Creamed Potatoes & Chakalaka – A perfect balance of sweet, tangy, and spicy flavors.
+        <br> OR <br> Braised Lamb Bobotie with Yellow Rice & Sambals – A South African classic with fragrant rice and flavorful condiments.
+            </p>
+        <h3>Step 3: Indulge in Dessert</h3>
+        <p>Koeksister with Chocolate Sauce – A sweet, syrupy treat paired with smooth chocolate.
+            <br> OR <br>Fruit Skewers – A fresh and light dessert option.</p>
+        
+        <h3>Step 4: Enjoy Coffee & Doughnuts</h3>
+        <p>End your meal with a complimentary cup of coffee and a delicious doughnut.
+        </p>
+        <h3>Location: RCh 1st floor THM hospitality Lab <br>
+            🕒 Date: March 18, 2025 <br>
+             Price: KSH 200
+            </h3>
+        Come savor a meal that celebrates flavor, culture, and community! Book your spot today.
+                </p>
+            </div>
+            <button class="toggle-btn" onclick="toggleText()">Order Now</button>
+            <h4 id="displayText" class="hidden-text">+254 764 444 076</h4>
+            </div>
+    </div>
+    
+    <div class="fade-in">
+        <!-- Contact Section with a Form -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>For inquiry: +254 764 444 076</p>
+        <p>For Website Creation: pgathungu254@gmail.com</p>
+     
+      </section>
+    </div>
+  </main>
+  
+ <div class="fade-in">
+    <footer class="footer">
+        <div class="footer-container">
+          <!-- About Section -->
+          <div class="footer-column">
+            <h3>About Us</h3>
+            <p>A modern dining experience with traditional flavors. Taste the difference quality makes</p>
+          </div>
+      
+          <!-- Quick Links -->
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </div>
+      
+          <!-- Contact Info -->
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Nyeri, Kenya</p>
+            <p><i class="fas fa-envelope"></i> ratiithomas@gmail.com</p>
+            <p><i class="fas fa-phone"></i> +254 764 444 076</p>
+          </div>
+      
+        <!-- Copyright -->
+        <div class="footer-bottom">
+          <p>&copy; 2025 Ubuntu Restraunt Platform. All Rights Reserved.</p>
+        </div>
+      </footer>
+ </div>
+  
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('mobile-menu');
+    const navbar = document.getElementById('navbar');
+    menuToggle.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+        // Scroll animation using Intersection Observer
+        const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.7 });
+    
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const fadeIns = document.querySelectorAll(".fade-in");
+
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target); // Remove observer after animation
+            }
+          });
+        },
+        {
+          threshold: 0.1, // Trigger when 10% of the element is visible
+        }
+      );
+
+      fadeIns.forEach((fadeIn) => observer.observe(fadeIn));
+    });
+
+    function toggleText() {
+            var text = document.getElementById("displayText");
+            if (text.style.display === "none" || text.style.display === "") {
+                text.style.display = "block"; // Show text
+            } else {
+                text.style.display = "none"; // Hide text
+            }
+        }
+      </script>
+</body>
+</html>
