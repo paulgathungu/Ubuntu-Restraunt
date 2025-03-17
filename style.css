@@ -109,7 +109,7 @@ body {
   
   /* Hero Section with Animated Online Background Images */
   .hero {
-    background-image: url('pexels-chanwalrus-958545.jpg');
+    background-image: url(bgpic.jpg);
     background-size: cover;
     position: relative;
     overflow: hidden;
